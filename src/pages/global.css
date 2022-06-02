@@ -1,0 +1,18 @@
+:root {
+  --white: #fff;
+
+  --purple-100: #bd7dff;
+  --purple-300: #8f5eff;
+  --purple-500: #613ffe;
+  --blue-600: #3320fe;
+  --blue-800: #0601fe;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+body {
+  overflow: hidden;
+}

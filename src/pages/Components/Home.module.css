@@ -1,0 +1,45 @@
+.main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.imagediv {
+  width: 70%;
+  height: 100%;
+}
+
+.formContainer {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formTop {
+  text-align: center;
+}
+
+.googleBtnLogin {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  padding: 0 10px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  margin-top: 60px;
+}
+
+.googleBtnLogin:hover {
+  border: 2px solid rgb(61, 61, 61);
+  transition: border 0.1s
+}
+
+.googleLoginText {
+  width: 90%;
+  text-align: center;
+}
