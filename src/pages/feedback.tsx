@@ -1,5 +1,7 @@
+import { FeedbackComponent } from "./Components/FeedbackComponent";
+
 export default function FeedBackPage() {
   return(
-    <h2>Usuarios</h2>
+    <FeedbackComponent/>
   )
 }
