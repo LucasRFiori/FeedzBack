@@ -1,31 +1,50 @@
-import { Door, Users, User, ChatCircle, HeartStraight } from 'phosphor-react'
 import Image from 'next/image'
 import style from './Feedback.module.css'
 import Logo from '../../../assets/logo.jpeg'
+import { Header } from './Header'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import { CreateReview } from './CreateReview'
+import { ReviewItem } from './ReviewItem'
+import { getDocs, getFirestore } from "firebase/firestore";
+import { db } from '../../../firebase'
+import { useEffect, useState } from 'react'
+import { collection, query, where, onSnapshot } from "firebase/firestore";
+
+export type ReviewType = {
+    comments: [{}]
+    createdAt: string;
+    createdBy: {
+        displayName: string;
+        photoUrl: string;
+    }
+    description: string;
+    id: string;
+    like: number;
+}
 
 export function FeedbackComponent(){
+    const [review, setReview] = useState([] as ReviewType[])
+
+    useEffect(() => {
+        const q = query(collection(db, "posts"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            const data = querySnapshot.docs.map((doc: any) => {
+                return {
+                    id: doc.id,
+                    ...doc.data()
+                }
+            });
+            setReview(data)
+        });
+
+        return() => unsubscribe();
+    }, [])
+    
     return (
         <div>
-            <div className={style.header}>
-                <div className={style.header__container}>
-                    <div className={style.header__logo}>
-                        <Image src={Logo} />
-                    </div>
-                    <div className={style.header__content}>
-                        <div className={style.header__customer}>
-                            <Users size={40} color="#333" />
-                            <p className={style.header__customerName}>
-                                Rafael Eto
-                            </p>
-                        </div>
-                        <div className={style.header__logout}>
-                            <button className={style.header__logoutButton}>
-                                <Door size={40} color="#333" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Header />
+            <ToastContainer />
             <div className={style.main__container}>
                 <div className={style.feed}>
                     <div className={style.feed__header}>
@@ -33,47 +52,11 @@ export function FeedbackComponent(){
                             Reviews
                         </h3>
                     </div>
+                    <CreateReview />
                     <ul className={style.feed__list}>
-                        <li className={style.feed__item}>
-                            <div className={style.feed__box}>
-                                <div className={style.feed__review}>
-                                    <div className={style.feed__user}>
-                                        <User size={50} />
-                                    </div>
-                                    <div className={style.feed__content}>
-                                        <div className={style.feed__contentHeader}>
-                                            <p className={style.feed__userName}>
-                                                Rafael Eto
-                                            </p>
-                                            <div className={style.feed__date}>
-                                                1 jun 2022
-                                            </div>
-                                        </div>
-                                        <p className={style.feed__text}>
-                                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className={style.feed__buttons}>
-                                    <div className={style.feed__like}>
-                                        <HeartStraight size={15} />
-                                        <div className={style.feed__likeText}>
-                                            Like
-                                        </div>
-                                        <div className={style.feed__likeCount}>
-                                            (0)
-                                        </div>
-                                    </div>
-                                    <div className={style.feed__answer}>
-                                        <ChatCircle size={15} />
-                                        <div className={style.feed__answerText}>
-                                            Answer
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        
+                        {review && review.map((item) => (
+                            <ReviewItem key={item.id} item={item}/>
+                        ))}
                     </ul>
                 </div>
             </div>
