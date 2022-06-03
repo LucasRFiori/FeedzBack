@@ -1,0 +1,228 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: #fff;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 5px;
+    height: 100px;
+}
+
+.header__logo {
+    display: flex;
+    max-width: 200px;
+}
+
+.header__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__customer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.header__customer svg {
+    margin-right: 10px;
+}
+
+.header__customerName {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+}
+
+.header__logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__logoutButton {
+    cursor: pointer;
+}
+
+.main__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    min-height: calc(100vh - 470px);
+}
+
+.feed {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.feed__header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e1e1e1;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+.feed__title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1E242C;
+}
+
+.feed__list {
+    list-style-type: none;
+}
+
+.feed__item {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    border-radius: 10px 10px 10px 0;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.feed__item:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.feed__box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.feed__user {
+    margin-right: 15px;
+}
+
+.feed__userName {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.feed__date {
+    font-size: 12px;
+    font-weight: 400;
+    color: #1E242C;
+}
+
+.feed__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.feed__contentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.feed__text {
+    font-size: 13px;
+    font-weight: 400;
+    color: #767676;
+}
+
+.feed__review {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.feed__buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.feed__like {
+    margin-right: 20px;
+}
+
+.feed__answer, .feed__like {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.feed__answer svg, .feed__like svg {
+    margin-right: 5px;
+}
+
+.feed__answerText, .feed__likeText, .feed__likeCount {
+    font-size: 12px;
+    font-weight: 400;
+    color: #333;
+    transition: all .3s
+}
+
+.footer {
+    box-shadow: 0 -1px 6px rgba(0, 0, 0, .16);
+}
+
+.footer__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 0 30px;
+    height: 225px;
+}
+
+.footer__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__logo {
+    max-width: 150px;
+}
+
+.footer__logo img {
+    display: block;
+}
+
+.footer__studentList {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__studentName {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1E242C;
+    line-height: 30px;
+}
+
+.footer__copyright {
+    background: #333;
+    padding: 20px 0;
+    height: 60px;
+}
+
+.footer__copyrightText {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+}
