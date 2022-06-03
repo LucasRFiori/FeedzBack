@@ -58,7 +58,7 @@
 .main__container {
     max-width: 1300px;
     margin: 0 auto;
-    min-height: calc(100vh - 470px);
+    min-height: calc(100vh - 430px);
 }
 
 .feed {
