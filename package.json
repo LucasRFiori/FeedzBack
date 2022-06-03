@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/firebase": "^3.2.1",
     "@types/node": "^17.0.29",
     "@types/react": "^18.0.8",
+    "firebase": "^9.8.2",
     "next": "12.1.5",
     "normalize.css": "^8.0.1",
     "phosphor-react": "^1.4.1",
