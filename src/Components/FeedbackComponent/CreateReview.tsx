@@ -12,23 +12,28 @@ export function CreateReview() {
   const [text, setText] = useState<string>()
 
   async function handleSendReview() {
-    
-    let date = new Date()
-    let formatDateToBr = (date.getDate() <= 9 ? '0' + (date.getDate()) : (date.getDate())) + "/" + (date.getMonth() <= 9 ? '0' + ( date.getMonth() + 1) : (date.getMonth() + 1)) + "/" + date.getFullYear(); 
-    try {
-      const docRef = await addDoc(collection(db, "posts"), {
-        description: text,
-        createdAt: formatDateToBr,
-        createdBy : {
-          displayName: user.displayName,
-          photoUrl: user.photoURL,
-        },
-        like: 0
-      });
-      setText('')
-      toast.success('Enviado com sucesso!');
-    } catch (e) {
-      console.error("Error adding document: ", e);
+    if(text?.trim().length > 1){
+      let date = new Date()
+      let formatDateToBr = (date.getDate() <= 9 ? '0' + (date.getDate()) : (date.getDate())) + "/" + (date.getMonth() <= 9 ? '0' + ( date.getMonth() + 1) : (date.getMonth() + 1)) + "/" + date.getFullYear(); 
+      try {
+        const docRef = await addDoc(collection(db, "posts"), {
+          description: text,
+          createdAt: formatDateToBr,
+          createdBy : {
+            displayName: user.displayName,
+            photoUrl: user.photoURL,
+          },
+          like: 0
+        });
+        setText('')
+        toast.success('Enviado com sucesso!');
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    } else {
+      toast.error("Por favor, insira um texto para o Feedback.", {
+        position: "top-right"
+      })
     }
   }
 
