@@ -1,7 +1,7 @@
 import { collection, onSnapshot, orderBy, query, where } from "firebase/firestore";
 import { Users } from "phosphor-react"
 import { useEffect, useState } from "react";
-import { db } from "../../../firebase";
+import { db } from "../../firebase";
 import style from './Feedback.module.css'
 
 type CommentListProps = {

@@ -1,15 +1,14 @@
 import Image from 'next/image'
 import style from './Feedback.module.css'
-import Logo from '../../../assets/logo.jpeg'
+import Logo from '../../assets/logo.jpeg'
 import { Header } from './Header'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { CreateReview } from './CreateReview'
 import { ReviewItem } from './ReviewItem'
-import { getDocs, getFirestore } from "firebase/firestore";
-import { db } from '../../../firebase'
+import { db } from '../../firebase'
 import { useEffect, useState } from 'react'
-import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { collection, query, onSnapshot } from "firebase/firestore";
 
 export type ReviewType = {
     comments: [{}]

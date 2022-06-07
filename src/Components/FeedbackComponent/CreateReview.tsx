@@ -1,8 +1,8 @@
 import { addDoc, collection } from "firebase/firestore";
-import { PaperPlaneRight, UserCircle, Users } from "phosphor-react";
+import { PaperPlaneRight, UserCircle } from "phosphor-react";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { db } from "../../../firebase";
+import { db } from "../../firebase";
 import { useUserInfo } from "../../Contexts/UserInfoProvider";
 import style from './Feedback.module.css'
 

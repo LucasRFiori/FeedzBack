@@ -1,6 +1,6 @@
 import { createContext, Dispatch, SetStateAction, useContext, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from '../../firebase'
+import { auth } from '../firebase'
 
 type UserType = {
   displayName: string;

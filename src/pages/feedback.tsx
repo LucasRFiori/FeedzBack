@@ -1,5 +1,5 @@
-import { FeedbackComponent } from "./Components/FeedbackComponent";
-import { UserInfoProvider } from "./Contexts/UserInfoProvider";
+import { FeedbackComponent } from "../Components/FeedbackComponent";
+import { UserInfoProvider } from "../Contexts/UserInfoProvider";
 
 export default function FeedBackPage() {
     

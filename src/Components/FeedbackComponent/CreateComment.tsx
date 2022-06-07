@@ -1,5 +1,5 @@
 import { PaperPlaneRight, Users } from "phosphor-react"
-import { db } from "../../../firebase"
+import { db } from "../../firebase"
 import { useUserInfo } from "../../Contexts/UserInfoProvider"
 import style from './Feedback.module.css'
 import { addDoc, collection, doc, updateDoc } from "firebase/firestore";

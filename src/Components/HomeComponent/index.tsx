@@ -1,11 +1,11 @@
 import style from './Home.module.css'
-import BannerLeft from '../../../assets/bannerhome.jpg'
+import BannerLeft from '../../assets/bannerhome.jpg'
 import Image from 'next/image'
-import GoogleLogoBtn from '../../../assets/GoogleLogoBtn.svg'
+import GoogleLogoBtn from '../../assets/GoogleLogoBtn.svg'
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { auth } from '../../../firebase';
+import { auth } from '../../firebase';
 import Router from 'next/router'
-import Logo from '../../../assets/logo.jpeg'
+import Logo from '../../assets/logo.jpeg'
 
 const provider = new GoogleAuthProvider();
 

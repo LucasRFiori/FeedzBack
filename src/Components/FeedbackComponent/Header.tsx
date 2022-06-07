@@ -1,11 +1,11 @@
 import style from './Feedback.module.css'
-import Logo from '../../../assets/logo.jpeg'
+import Logo from '../../assets/logo.jpeg'
 import Image from 'next/image'
 import { SignOut, UserCircle, Users } from 'phosphor-react'
 import { useUserInfo } from '../../Contexts/UserInfoProvider'
 import { toast, ToastContainer } from 'react-toastify'
 import { signOut } from "firebase/auth";
-import { auth } from '../../../firebase'
+import { auth } from '../../firebase'
 import Router from 'next/router'
 
 export function Header() {
