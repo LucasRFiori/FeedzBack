@@ -1,5 +1,5 @@
 import { addDoc, collection } from "firebase/firestore";
-import { PaperPlaneRight, Users } from "phosphor-react";
+import { PaperPlaneRight, UserCircle, Users } from "phosphor-react";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { db } from "../../../firebase";
@@ -23,8 +23,7 @@ export function CreateReview() {
           displayName: user.displayName,
           photoUrl: user.photoURL,
         },
-        like: 0,
-        comments: [{}]
+        like: 0
       });
       setText('')
       toast.success('Enviado com sucesso!');
@@ -37,7 +36,7 @@ export function CreateReview() {
       <>
         <div className={style.createReviewContainer}>
           <div className={style.createReview}>
-            {user.photoURL ? <img src={user.photoURL} style={{borderRadius: 30, marginRight:10}} width="50px" height="50px"/> : <Users size={40} color="#333" />}
+            {user.photoURL ? <img src={user.photoURL} style={{borderRadius: 30, marginRight:10}} width="50px" height="50px"/> : <UserCircle size={50} color="#333" />}
             <input type='text' placeholder="Conte-nos sua opinião" onChange={(e) => setText(e.target.value)} value={text}/>
           </div>
           <div className={style.createReviewBtn}>

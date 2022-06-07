@@ -49,7 +49,7 @@ export function FeedbackComponent(){
                 <div className={style.feed}>
                     <div className={style.feed__header}>
                         <h3 className={style.feed__title}>
-                            Reviews
+                            Feedbacks
                         </h3>
                     </div>
                     <CreateReview />

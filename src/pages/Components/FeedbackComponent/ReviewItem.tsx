@@ -1,15 +1,25 @@
 import { ChatCircle, HeartStraight, User, Users } from "phosphor-react";
+import { useState } from "react";
 import { ReviewType } from ".";
 import style from './Feedback.module.css'
+import { CreateComment } from './CreateComment'
+import { CommentList } from "./CommentList";
 
 type CreateReviewProps = {
     item: ReviewType;
 }
 
 export function ReviewItem({ item }: CreateReviewProps) {
+    const [isOpen, setOpen] = useState(false)
+
+    function handleComment() {
+        setOpen(!isOpen)
+    }
+
     return (
         <li className={style.feed__item}>
             {item && (
+                <>
                 <div className={style.feed__box}>
                     <div className={style.feed__review}>
                         <div className={style.feed__user}>
@@ -41,12 +51,19 @@ export function ReviewItem({ item }: CreateReviewProps) {
                         </div>
                         <div className={style.feed__answer}>
                             <ChatCircle size={15} />
-                            <div className={style.feed__answerText}>
+                            <div className={style.feed__answerText} onClick={handleComment}>
                                 Comentar
                             </div>
                         </div>
                     </div>
                 </div>
+                {isOpen && (
+                    <>
+                    <CommentList documentId={item.id}/>
+                    <CreateComment documentId={item.id}/>
+                    </>
+                )}
+                </>
             )}
         </li>
     )

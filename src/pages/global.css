@@ -30,3 +30,32 @@ input, textarea, button, select {
   border: none;
   background: none;
 }
+
+ul, li {
+  list-style: none;
+}
+
+p {
+  word-break: break-word;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+@media (max-width: 768px) {
+  body {
+    height: 100vh;
+  }
+}

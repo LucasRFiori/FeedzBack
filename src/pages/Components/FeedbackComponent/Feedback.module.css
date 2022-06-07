@@ -136,7 +136,7 @@
 }
 
 .feed__text {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 400;
     color: #767676;
 }
@@ -230,7 +230,7 @@
 }
 
 .createReviewContainer {
-    border: 1px solid #ccc;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
     padding: 0 10px;
     margin-bottom: 30px;
 }
@@ -245,11 +245,11 @@
 }
 
 .createReview input {
-    border: 1px solid #3A3B3C;
-    width: 100%;
-    height: 30px;
-    border-radius: 20px;
-    padding-left: 20px;
+    background: #e7e7e7;
+    height: 40px;
+    border-radius: 30px;
+    padding-left: 10px;
+    flex: 1;
 }
 
 .createReviewBtn {
@@ -262,4 +262,91 @@
     align-items: center;
     padding-bottom: 10px;
     cursor: pointer;
+}
+
+.commentContainer {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.commentContainer > header {
+    padding: 2px;
+}
+
+.commentContainer img {
+    margin: auto;
+}
+
+.inputCommentContainer {
+    display: flex;
+    padding: 5px;
+    border-radius: 25px;
+    flex: 1;
+    align-items: center;
+}
+
+.inputCommentContainer input {
+    background: #e7e7e7;
+    height: 30px;
+    border-radius: 30px;
+    padding-left: 10px;
+    flex: 1;
+    font-size: 14px;
+}
+
+.errorInput {
+    border: 1px solid red;
+}
+
+.commentsContainer {
+    margin-top: 10px;
+}
+
+.commentsContainer li:not(:last-child) {
+    padding-bottom: 10px;
+}
+
+.commentsContainer li{
+    display: flex;
+    align-items: center;
+}
+
+.commentsContainer .comment {
+    flex: 1;
+}
+.commentsContainer .headComment {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.commentsContainer .headComment span {
+    font-size: 13px;
+}
+
+.commentText {
+    font-size: 15px;    
+    color: #767676;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .main__container {
+        padding: 0 10px;
+    }
+
+    .createReview input, .inputCommentContainer input {
+        min-width: 100px;
+    }
+
+    .inputCommentContainer {
+        flex-wrap: wrap;
+    }
+    .header__customer {
+        margin: 0;
+    }
 }

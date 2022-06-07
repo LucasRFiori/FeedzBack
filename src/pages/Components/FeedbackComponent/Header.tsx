@@ -1,7 +1,7 @@
 import style from './Feedback.module.css'
 import Logo from '../../../assets/logo.jpeg'
 import Image from 'next/image'
-import { Door, Users } from 'phosphor-react'
+import { SignOut, UserCircle, Users } from 'phosphor-react'
 import { useUserInfo } from '../../Contexts/UserInfoProvider'
 import { toast, ToastContainer } from 'react-toastify'
 import { signOut } from "firebase/auth";
@@ -15,7 +15,7 @@ export function Header() {
         signOut(auth).then(() => {
             toast.success('Logout realizado com sucesso.', {
                 autoClose: 2000,
-                position: toast.POSITION.TOP_RIGHT
+                position: toast.POSITION.TOP_RIGHT,
             })
             setTimeout(() => {
                 Router.push('/')
@@ -37,7 +37,7 @@ export function Header() {
                 </div>
                 <div className={style.header__content}>
                     <div className={style.header__customer}>
-                        {user?.photoURL ? <img src={user.photoURL} style={{borderRadius: 30, marginRight:10}} width="50px" height="50px"/> : <Users size={40} color="#333" />}
+                        {user?.photoURL ? <img src={user.photoURL} style={{borderRadius: 30, marginRight:10}} width="50px" height="50px"/> : <UserCircle size={50} color="#333" />}
                         
                         <p className={style.header__customerName}>
                             {user.displayName}
@@ -45,7 +45,7 @@ export function Header() {
                     </div>
                     <div className={style.header__logout}>
                         <button className={style.header__logoutButton}>
-                            <Door size={40} color="#333" onClick={handleLogout}/>
+                            <SignOut size={40} color="#333" onClick={handleLogout}/>
                         </button>
                     </div>
                 </div>
